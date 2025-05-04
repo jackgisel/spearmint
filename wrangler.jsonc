@@ -1,0 +1,21 @@
+{
+  "name": "jstack-app",
+  "main": "src/server/index.ts",
+  "compatibility_date": "2025-02-14",
+  "observability": {
+    "enabled": true
+  },
+  "placement": {
+    "mode": "smart"
+  },
+  "dev": {
+    "port": 8080
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "spearmint",
+      "database_id": "8a48eb8c-8e54-454e-be15-5367c3be2615"
+    }
+  ]
+}
