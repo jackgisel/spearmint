@@ -10,5 +10,11 @@ export const client = createClient<AppRouter>({
 });
 
 function getBaseUrl() {
-  return process.env.BASE_URL || `http://localhost:8080`;
+  // 👇 In production, use the production worker
+  if (process.env.NODE_ENV === "production") {
+    return "https://jstack-app.jackrgisel.workers.dev";
+  }
+
+  // 👇 Locally, use wrangler backend
+  return `http://localhost:8080`;
 }
