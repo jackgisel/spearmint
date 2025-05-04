@@ -15,7 +15,8 @@
     {
       "binding": "DB",
       "database_name": "spearmint",
-      "database_id": "8a48eb8c-8e54-454e-be15-5367c3be2615"
+      "database_id": "8a48eb8c-8e54-454e-be15-5367c3be2615",
+      "migrations_dir": "drizzle/migrations"
     }
   ]
 }

@@ -1,14 +1,9 @@
-import { pgTable, serial, text, timestamp, index } from "drizzle-orm/pg-core"
+import { sql } from "drizzle-orm";
+import * as t from "drizzle-orm/sqlite-core";
+import { sqliteTable as table } from "drizzle-orm/sqlite-core";
 
-export const posts = pgTable(
-  "posts",
-  {
-    id: serial("id").primaryKey(),
-    name: text("name").notNull(),
-    createdAt: timestamp("createdAt").defaultNow().notNull(),
-    updatedAt: timestamp("updatedAt").defaultNow().notNull(),
-  },
-  (table) => [
-    index("Post_name_idx").on(table.name)
-  ]
-)
+export const posts = table("posts", {
+  id: t.integer({ mode: "number" }).primaryKey({ autoIncrement: true }),
+  name: t.text().notNull(),
+  createdAt: t.text().default(sql`(CURRENT_TIMESTAMP)`),
+});
